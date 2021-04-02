@@ -53,12 +53,15 @@ collections:
           widget: hidden,
           default: BlogPost,
         }
-      - name: path
-        label: Path
-        widget: string
-        pattern: [/]
-        hint: "Path must start with /"
+      - {
+          name: path,
+          label: Path,
+          widget: string,
+          pattern: [/],
+          hint: "Path must start with /",
+        }
       - { name: date, label: Date, widget: datetime }
+      - { name: pinned, label: Pinned?, widget: boolean }
       - { name: title, label: Title }
       - label: Meta Description
         name: metaDescription
