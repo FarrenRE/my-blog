@@ -26,12 +26,15 @@ const FancySquare = ({ post }) => {
           >
             <FaEllipsisH />
           </Link>
-          <Link
-            to={post.frontmatter.path}
-            className={styles.link}
-          >
-            <BiLinkExternal />
-          </Link>
+
+          {post.frontmatter.externalPath && 
+            <Link
+              to={post.frontmatter.externalPath}
+              className={styles.link}
+            >
+              <BiLinkExternal />
+            </Link>
+          }
         </div>
         <div className={styles.footer}>
           <span className={styles.date}>
