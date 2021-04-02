@@ -1,0 +1,57 @@
+$padding: 0.5em;
+
+.FancySquare {
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  flex: 0 1 100%;
+  padding: $padding $padding 0 0;
+  position: relative;
+  min-height: 50vh;
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .FancySquare {
+    flex: 50%;
+    min-height: 50vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .FancySquare {
+    flex: 33%;
+    min-height: 33vh;
+  }
+}
+
+@media (min-width: 1600px) {
+  .FancySquare {
+    flex: 25%;
+    min-height: 25vh;
+  }
+}
+
+.inner {
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(#{$padding}/4);
+  width: 100%;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.close {
+  cursor: pointer;
+  display: inline;
+  position: absolute;
+  top: 0;
+  right: $padding;
+  padding: $padding;
+}
