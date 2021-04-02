@@ -9,6 +9,10 @@ $padding: 0.5em;
   position: relative;
   min-height: 50vh;
   font-size: 2rem;
+
+  &.pinned {
+    order: -1;
+  }
 }
 
 @media (min-width: 768px) {
@@ -34,24 +38,39 @@ $padding: 0.5em;
 
 .inner {
   background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(#{$padding}/4);
+  flex-direction: column;
+  padding: calc(#{$padding} * 4);
   width: 100%;
 }
 
-.ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.footer {
+  margin-top: auto;
 }
 
-.close {
-  cursor: pointer;
-  display: inline;
-  position: absolute;
-  top: 0;
-  right: $padding;
-  padding: $padding;
+.date {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: .55em;
 }
+
+
+
+
+
+/* Unused */
+
+// .ul {
+//   list-style-type: none;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .close {
+//   cursor: pointer;
+//   display: inline;
+//   position: absolute;
+//   top: 0;
+//   right: $padding;
+//   padding: $padding;
+// }
