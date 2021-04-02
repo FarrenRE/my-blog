@@ -53,6 +53,11 @@ collections:
           widget: hidden,
           default: BlogPost,
         }
+      - { 
+          name: date, 
+          label: Date, 
+          widget: datetime 
+        }
       - {
           name: path,
           label: Path,
@@ -65,19 +70,35 @@ collections:
           label: External Path,
           widget: string,
         }
-      - { name: date, label: Date, widget: datetime }
-      - { name: pinned, label: Pinned?, widget: boolean }
-      - { name: title, label: Title }
-      - label: Meta Description
-        name: metaDescription
-        widget: text
-        required: false
-      - label: Featured Image
-        name: thumbnail
-        widget: image
-        hint: "Image size 1280x800 works best :)"
-        required: false
-        media_library:
-          config:
-            multiple: false
-      - { name: body, label: Body, widget: markdown }
+      - { 
+          name: pinned, 
+          label: Pinned?, 
+          widget: boolean, 
+          required: false,
+        }
+      - { 
+          name: title, 
+          label: Title 
+        }
+      - {
+          label: Meta Description,
+          name: metaDescription,
+          widget: text,
+          required: false
+        }
+      - {
+          label: Featured Image,
+          name: thumbnail,
+          widget: image,
+          hint: "Image size 1280x800 works best :)",
+          required: false,
+          media_library:
+            config:
+              multiple: false
+        }
+      - { 
+          name: body, 
+          label: Body, 
+          widget: markdown,
+          required: false
+        }
