@@ -51,12 +51,13 @@ collections:
           label: Template,
           name: template,
           widget: hidden,
-          default: BlogPost,
+          default: BlogPost
         }
       - { 
           name: date, 
           label: Date, 
-          widget: datetime 
+          widget: datetime,
+          required: false
         }
       - {
           name: path,
@@ -64,11 +65,13 @@ collections:
           widget: string,
           pattern: [/],
           hint: "Path must start with /",
+          required: false
         }
       - {
           name: externalPath,
           label: External Path,
           widget: string,
+          required: false
         }
       - { 
           name: pinned, 
@@ -78,7 +81,8 @@ collections:
         }
       - { 
           name: title, 
-          label: Title 
+          label: Title,
+          required: false
         }
       - {
           label: Meta Description,
