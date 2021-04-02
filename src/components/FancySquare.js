@@ -5,7 +5,6 @@ import { FaEllipsisH } from 'react-icons/fa'
 import { BiLinkExternal } from 'react-icons/bi'
 
 const FancySquare = ({ post }) => {
-  console.log(`pinned? ${post.frontmatter.pinned}`);
   return (
     <article
       className={`
@@ -20,26 +19,37 @@ const FancySquare = ({ post }) => {
           </h1>
         </div>
         <div className={styles.body}>
+          <p>{post.frontmatter.metaDescription}</p>
+
+          {/* Conditionally render path */}
+          {post.excerpt.toString() !== '' && 
           <Link
             to={post.frontmatter.path}
             className={styles.link}
           >
             <FaEllipsisH />
           </Link>
+          }
 
+          {/* Conditionally render external path */}
           {post.frontmatter.externalPath && 
-            <Link
-              to={post.frontmatter.externalPath}
+            <a
+              href={post.frontmatter.externalPath}
               className={styles.link}
+              target="_blank"
             >
               <BiLinkExternal />
-            </Link>
+            </a>
           }
         </div>
         <div className={styles.footer}>
-          <span className={styles.date}>
-            {post.frontmatter.date}
-          </span>
+
+          {/* Conditionally render date */}
+          {post.frontmatter.date.toString() !== 'Invalid date' &&
+            <span className={styles.date}>
+              {post.frontmatter.date}
+            </span>
+          }
         </div>
       </div>
       {/* <span className={styles.close}>x</span> */}

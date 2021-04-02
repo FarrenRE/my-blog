@@ -65,7 +65,6 @@ collections:
           widget: string,
           pattern: [/],
           hint: "Path must start with /",
-          required: false
         }
       - {
           name: externalPath,
@@ -90,16 +89,18 @@ collections:
           widget: text,
           required: false
         }
-      - {
-          label: Featured Image,
-          name: thumbnail,
-          widget: image,
-          hint: "Image size 1280x800 works best :)",
-          required: false,
-          media_library:
-            config:
-              multiple: false
-        }
+      # - {
+      #     label: Featured Image,
+      #     name: thumbnail,
+      #     widget: image,
+      #     hint: "Image size 1280x800 works best :)",
+      #     required: false,
+      #     media_library: {
+      #       config: {
+      #         multiple: false
+      #       }
+      #     }
+      #   }
       - { 
           name: body, 
           label: Body, 

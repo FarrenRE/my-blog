@@ -12,6 +12,9 @@ $padding: 0.5em;
 
   &.pinned {
     order: -1;
+    & .inner {
+      background-color: rgba(153, 132, 213, 0.25);
+    }
   }
 }
 

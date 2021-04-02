@@ -46,11 +46,13 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
+          html
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path
+            externalPath
             title
-            thumbnail
+            pinned
           }
         }
       }
