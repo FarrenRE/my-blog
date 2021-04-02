@@ -60,6 +60,11 @@ collections:
           pattern: [/],
           hint: "Path must start with /",
         }
+      - {
+          name: externalPath,
+          label: External Path,
+          widget: string,
+        }
       - { name: date, label: Date, widget: datetime }
       - { name: pinned, label: Pinned?, widget: boolean }
       - { name: title, label: Title }
