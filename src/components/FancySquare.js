@@ -7,28 +7,32 @@ import { BiLinkExternal } from 'react-icons/bi'
 const FancySquare = ({ post }) => {
   return (
     <article
-      className={`
-        ${styles.FancySquare} 
-        ${post.frontmatter.pinned ? 'pinned' : ''}
-      `}
+      className={`${styles.FancySquare}`}
+      style={{order: post.frontmatter.order}}
     >
       <div className={styles.inner}>
         <div className={styles.header}>
           <h1>
-            {post.frontmatter.title} {post.frontmatter.pinned}
+            {post.frontmatter.title}
           </h1>
         </div>
         <div className={styles.body}>
-          <p>{post.frontmatter.metaDescription}</p>
+
+          {/* Conditionally render tagline */}
+          {post.frontmatter.tagline &&
+            <p>
+              {post.frontmatter.tagline}
+            </p>          
+          }
 
           {/* Conditionally render path */}
           {post.excerpt.toString() !== '' && 
-          <Link
-            to={post.frontmatter.path}
-            className={styles.link}
-          >
-            <FaEllipsisH />
-          </Link>
+            <Link
+              to={post.frontmatter.path}
+              className={styles.link}
+            >
+              <FaEllipsisH />
+            </Link>
           }
 
           {/* Conditionally render external path */}
@@ -37,6 +41,7 @@ const FancySquare = ({ post }) => {
               href={post.frontmatter.externalPath}
               className={styles.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <BiLinkExternal />
             </a>
