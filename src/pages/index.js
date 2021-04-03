@@ -52,7 +52,8 @@ export const pageQuery = graphql`
             path
             externalPath
             title
-            pinned
+            order
+            tagline
           }
         }
       }
