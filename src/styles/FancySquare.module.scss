@@ -9,13 +9,6 @@ $padding: 0.5em;
   position: relative;
   min-height: 50vh;
   font-size: 2rem;
-
-  &.pinned {
-    order: -1;
-    & .inner {
-      background-color: rgba(153, 132, 213, 0.25);
-    }
-  }
 }
 
 @media (min-width: 768px) {
@@ -41,7 +34,7 @@ $padding: 0.5em;
 
 .inner {
   background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 5%;
+  border-radius: 32px;
   display: flex;
   flex-direction: column;
   padding: calc(#{$padding} * 4);
