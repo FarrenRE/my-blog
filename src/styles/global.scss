@@ -87,6 +87,8 @@ a {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 900;
+  font-size: 4rem;
+  line-height: 0;
   text-transform: uppercase;
 }
 .hero-header {
@@ -396,30 +398,20 @@ body.light {
   padding-bottom: 1rem;
 }
 
-// @media (min-width: 512px) {
-//   .squares {
-//     grid-template-columns: 1fr 1fr;
-//     grid-template-rows: 1fr 1fr;
-//   }
-// }
+/* Post styles */
 
-// @media (min-width: 768px) {
-//   .squares {
-//     grid-template-columns: 1fr 1fr 1fr;
-//     grid-template-rows: 1fr 1fr 1fr;
-//   }
-// }
+h2 {
+  margin-top: 1.5em;
+}
 
-// @media (min-width: 768px) {
-//   .squares {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-//     grid-template-rows: 1fr 1fr 1fr 1fr;
-//   }
-// }
+#about > div {
+  background-color: rgba(153, 132, 213, 0.25) !important;
+}
 
-// @media (min-width: 1200px) {
-//   .squares {
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-//   }
-// }
+
+/* Netlify CMS widgets */
+
+// code widget
+.gatsby-highlight {
+  margin-bottom: 2rem;
+}
