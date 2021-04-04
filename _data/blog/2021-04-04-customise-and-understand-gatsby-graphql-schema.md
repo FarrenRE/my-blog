@@ -128,6 +128,8 @@ export const pageQuery = graphql`
 `
 ```
 
+
+
 And data props:
 
 ```javascript
@@ -147,6 +149,8 @@ const IndexPage = ({
   )
 }
 ```
+
+
 
 Or even just what the heck "allMarkdownRemark" actually is and where it sits in the site data:
 
