@@ -7,7 +7,7 @@ tagline: Cannot query field X on type Y?
 metaDescription: >-
   Cannot query field X on type Y? You may need to customise your GraphQL Schema.
   In Gatsby, it's easy to do!
-thumbnail: /assets/Screenshot 2021-04-04 130910.png
+thumbnail: /assets/graphql-explorer-sample-order.png
 ---
 ## Desired result
 
@@ -29,7 +29,7 @@ While building this site using Gatbsy + Netlify CMS, I wanted to add a field to 
 
 With the field appearing in the Netlify CMS admin panel like so:
 
-![Sample field: Order](/assets/Screenshot 2021-04-04 123740.png "Sample field: Order")
+![Sample field: Order](/assets/netlify-cms-sample-field-order.png "Sample field: Order")
 
 Done & done, save & run -- lo and behold an error in the console:
 
@@ -128,8 +128,6 @@ export const pageQuery = graphql`
 `
 ```
 
-
-
 And data props:
 
 ```javascript
@@ -150,11 +148,9 @@ const IndexPage = ({
 }
 ```
 
-
-
 Or even just what the heck "allMarkdownRemark" actually is and where it sits in the site data:
 
-![GraphQL Explorer](/assets/Screenshot 2021-04-04 130910.png "GraphQL Explorer")
+![GraphQL Explorer](/assets/graphql-explorer-sample-order.png "GraphQL Explorer")
 
 ^ Here! ^
 
