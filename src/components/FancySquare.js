@@ -7,8 +7,15 @@ import { BiLinkExternal } from 'react-icons/bi'
 const FancySquare = ({ post }) => {
   return (
     <article
-      className={`${styles.FancySquare}`}
+      className={styles.FancySquare}
       style={{order: post.frontmatter.order}}
+      id={ // set id from title
+        post.frontmatter.title
+          .split(/[., !\/\(\):'"]/, -1)
+          .filter(x => x) // remove empty [""] values
+          .join('-')
+          .toLowerCase()
+      }
     >
       <div className={styles.inner}>
         <div className={styles.header}>

@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/navigation"
 import 'prismjs/themes/prism-okaidia.css';
+import { BiLeftArrowAlt } from 'react-icons/bi'
 
 export default ({ children }) => {
   const data = useStaticQuery(
@@ -19,13 +20,16 @@ export default ({ children }) => {
     <div className="site-wrapper">
       <header className="site-header">
         <div className="site-title">
-          <Link to="/">{data.site.siteMetadata.title}</Link>
+          <Link to="/"><BiLeftArrowAlt /></Link>
         </div>
-        <Navigation />
+        {/* <Navigation /> */}
       </header>
       {children}
       <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Delog &bull; Crafted with <span role="img" aria-label="love">❤️</span> by <a href="https://w3layouts.com">W3Layouts</a></p>
+        <div className="site-title">
+          <Link to="/"><BiLeftArrowAlt /></Link>
+        </div>
+        <p>{new Date().getFullYear()} &ndash; farrenre.com</p>
       </footer>
     </div>
   )
