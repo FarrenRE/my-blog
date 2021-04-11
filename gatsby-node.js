@@ -15,6 +15,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       linkedin: String
       stackoverflow: String
       ravelry: String
+      socials: [String]
+      draft: Boolean
     }
   `
   createTypes(typeDefs)
