@@ -2,6 +2,13 @@ import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import styles from '../styles/blogTemplate.module.scss'
+
+// icons
+import { BiLinkExternal } from 'react-icons/bi'
+import { GrGithub, GrLinkedin, GrStackOverflow } from 'react-icons/gr'
+import { FaRavelry } from 'react-icons/fa'
+
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -30,6 +37,63 @@ export default function Template({
               <div className="post-meta">{frontmatter.date}</div>
             </div>
           )}
+          <div className={styles.externalLinks}>
+
+            {/* External path */}
+            {frontmatter.externalPath && 
+              <a
+                href={frontmatter.externalPath}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BiLinkExternal />
+              </a>
+            }
+
+            {/* Socials */}
+            {frontmatter.github &&
+              <a
+                href={frontmatter.github}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GrGithub />
+              </a>
+            }
+            {frontmatter.linkedin &&
+              <a
+                href={frontmatter.linkedin}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GrLinkedin />
+              </a>
+            }
+            {frontmatter.stackoverflow &&
+              <a
+                href={frontmatter.stackoverflow}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GrStackOverflow />
+              </a>
+            }
+            {frontmatter.ravelry &&
+              <a
+                href={frontmatter.ravelry}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaRavelry />
+              </a>
+            }
+
+          </div>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -55,6 +119,10 @@ export const pageQuery = graphql`
         title
         thumbnail
         metaDescription
+        externalPath
+        github
+        ravelry
+        linkedin
       }
     }
   }

@@ -45,11 +45,21 @@ $padding: 0.5em;
   margin-top: auto;
 }
 
-.link {
-  border: 3px solid var(--primary-color);
-  border-radius: 16px;
-  display: inline-flex;
-  padding: calc(#{$padding} / 4) $padding;
+.links {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+
+.iconLink {
+  color: var(--primary-color);
+  display: flex;
+  font-size: 2.8rem;
+
+  & svg path {
+    stroke: var(--primary-color);
+  }
   
   &:not(:last-of-type) {
     margin-right: 0.5em;
@@ -67,17 +77,27 @@ $padding: 0.5em;
 
 /* Unused */
 
+// .link {
+//   border: 3px solid var(--primary-color);
+//   border-radius: 16px;
+//   display: inline-flex;
+//   padding: calc(#{$padding} / 4) $padding;
+  
+//   &:not(:last-of-type) {
+//     margin-right: 0.5em;
+//   }
+// }
 // .ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-// }
-
-// .close {
-//   cursor: pointer;
-//   display: inline;
-//   position: absolute;
-//   top: 0;
-//   right: $padding;
-//   padding: $padding;
-// }
+  //   list-style-type: none;
+  //   margin: 0;
+  //   padding: 0;
+  // }
+  
+  // .close {
+    //   cursor: pointer;
+    //   display: inline;
+    //   position: absolute;
+    //   top: 0;
+    //   right: $padding;
+    //   padding: $padding;
+    // }

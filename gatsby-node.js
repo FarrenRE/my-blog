@@ -11,6 +11,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       order: Int
       externalPath: String
       tagline: String
+      github: String
+      linkedin: String
+      stackoverflow: String
+      ravelry: String
     }
   `
   createTypes(typeDefs)

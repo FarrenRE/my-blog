@@ -108,6 +108,34 @@ collections:
             }
           }
         }
+      - {
+          name: github,
+          label: Github,
+          widget: string,
+          hint: "https://www.github.com/...",
+          required: false
+        }
+      - {
+          name: linkedin,
+          label: Linkedin,
+          widget: string,
+          hint: "https://www.linkedin.com/...",
+          required: false
+        }
+      - {
+          name: stackoverflow,
+          label: Stackoverflow,
+          widget: string,
+          hint: "https://www.stackoverflow.com/...",
+          required: false
+        }
+      - {
+          name: ravelry,
+          label: Ravelry,
+          widget: string,
+          hint: "https://www.ravelry.com/...",
+          required: false
+        }
       - { 
           name: body, 
           label: Body, 

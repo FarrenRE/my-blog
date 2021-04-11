@@ -54,6 +54,10 @@ export const pageQuery = graphql`
             title
             order
             tagline
+            github
+            linkedin
+            ravelry
+            stackoverflow
           }
         }
       }

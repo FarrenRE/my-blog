@@ -1,8 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from '../styles/FancySquare.module.scss'
+
+// icons
 import { FaEllipsisH } from 'react-icons/fa'
 import { BiLinkExternal } from 'react-icons/bi'
+import { GrInspect, GrGithub, GrLinkedin, GrStackOverflow } from 'react-icons/gr'
+import { FaRavelry } from 'react-icons/fa'
 
 const FancySquare = ({ post }) => {
   return (
@@ -32,29 +36,76 @@ const FancySquare = ({ post }) => {
             </p>          
           }
 
-          {/* Conditionally render path */}
-          {post.excerpt.toString() !== '' && 
-            <Link
-              to={post.frontmatter.path}
-              className={styles.link}
-            >
-              <FaEllipsisH />
-            </Link>
-          }
-
-          {/* Conditionally render external path */}
-          {post.frontmatter.externalPath && 
-            <a
-              href={post.frontmatter.externalPath}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <BiLinkExternal />
-            </a>
-          }
         </div>
         <div className={styles.footer}>
+
+          <div className={styles.links}>
+
+            {/* Path to blog content */}
+            {post.excerpt.toString() !== '' && 
+              <Link
+                to={post.frontmatter.path}
+                className={styles.iconLink}
+              >
+                <GrInspect />
+              </Link>
+            }
+
+            {/* External path */}
+            {post.frontmatter.externalPath && 
+              <a
+                href={post.frontmatter.externalPath}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BiLinkExternal />
+              </a>
+            }
+
+            {/* Socials */}
+            {post.frontmatter.github &&
+              <a
+                href={post.frontmatter.github}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GrGithub />
+              </a>
+            }
+            {post.frontmatter.linkedin &&
+              <a
+                href={post.frontmatter.linkedin}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GrLinkedin />
+              </a>
+            }
+            {post.frontmatter.stackoverflow &&
+              <a
+                href={post.frontmatter.stackoverflow}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GrStackOverflow />
+              </a>
+            }
+            {post.frontmatter.ravelry &&
+              <a
+                href={post.frontmatter.ravelry}
+                className={styles.iconLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaRavelry />
+              </a>
+            }
+
+          </div>
 
           {/* Conditionally render date */}
           {post.frontmatter.date.toString() !== 'Invalid date' &&
