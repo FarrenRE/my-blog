@@ -109,6 +109,19 @@ collections:
           }
         }
       - {
+          name: socials,
+          label: Socials,
+          widget: select,
+          multiple: true,
+          required: false,
+          options: {
+            { label: 'Github', value: 'github' },
+            { label: 'Stack Overflow', value: 'stackoverflow' },
+            { label: 'Ravelry', value: 'ravelry' },
+            { label: 'Linkedin', value: 'linkedin' }
+          }
+        }
+      - {
           name: github,
           label: Github,
           widget: string,
@@ -141,4 +154,11 @@ collections:
           label: Body, 
           widget: markdown,
           required: false
+        }
+      - {
+          name: draft,
+          label: Publish as draft?,
+          widget: boolean,
+          required: false,
+          default: false
         }
