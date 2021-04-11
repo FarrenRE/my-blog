@@ -11,11 +11,17 @@ thumbnail: /assets/graphql-explorer-sample-order.png
 ---
 ## Quick reference
 
+### Step-by-step
+
 1. Create field in `config.yml`
 2. Update schema customization in `gatbsy-node.js`
 3. Update page query
 
 And somewhere along the way, implement the field in desired component/file!
+
+### Links
+
+* <https://www.gatsbyjs.org/docs/schema-customization/#creating-type-definitions>
 
 ## Desired result
 
