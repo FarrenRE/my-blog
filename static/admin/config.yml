@@ -114,12 +114,12 @@ collections:
           widget: select,
           multiple: true,
           required: false,
-          options: {
-            { label: 'Github', value: 'github' },
-            { label: 'Stack Overflow', value: 'stackoverflow' },
-            { label: 'Ravelry', value: 'ravelry' },
-            { label: 'Linkedin', value: 'linkedin' }
-          }
+          options: 
+            - { label: "Github", value: "github" }
+            - { label: "Stack Overflow", value: "stackoverflow" }
+            - { label: "Ravelry", value: "ravelry" }
+            - { label: "Linkedin", value: "linkedin" }
+          
         }
       - {
           name: github,
