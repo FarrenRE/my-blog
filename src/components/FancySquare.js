@@ -56,8 +56,6 @@ const FancySquare = ({ post }) => {
               <a
                 href={post.frontmatter.externalPath}
                 className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <BiLinkExternal />
               </a>
@@ -68,8 +66,6 @@ const FancySquare = ({ post }) => {
               <a
                 href={post.frontmatter.github}
                 className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <GrGithub />
               </a>
@@ -78,8 +74,6 @@ const FancySquare = ({ post }) => {
               <a
                 href={post.frontmatter.linkedin}
                 className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <GrLinkedin />
               </a>
@@ -88,8 +82,6 @@ const FancySquare = ({ post }) => {
               <a
                 href={post.frontmatter.stackoverflow}
                 className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <GrStackOverflow />
               </a>
@@ -98,8 +90,6 @@ const FancySquare = ({ post }) => {
               <a
                 href={post.frontmatter.ravelry}
                 className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 <FaRavelry />
               </a>
