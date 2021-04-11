@@ -9,6 +9,14 @@ metaDescription: >-
   In Gatsby, it's easy to do!
 thumbnail: /assets/graphql-explorer-sample-order.png
 ---
+## Quick reference
+
+1. Create field in `config.yml`
+2. Update schema customization in `gatbsy-node.js`
+3. Update page query
+
+And somewhere along the way, implement the field in desired component/file!
+
 ## Desired result
 
 While building this site using Gatbsy + Netlify CMS, I wanted to add a field to the pre-existing blog template found in `config.yml`:
