@@ -8,7 +8,11 @@ $padding: 0.5em;
   padding: $padding $padding 0 0;
   position: relative;
   min-height: 50vh;
-  font-size: 2rem;
+  font-size: 1.65rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -37,8 +41,24 @@ $padding: 0.5em;
   border-radius: 32px;
   display: flex;
   flex-direction: column;
-  padding: calc(#{$padding} * 4);
+  padding: calc(#{$padding} * 2.5);
   width: 100%;
+
+  @media (min-width: 768px) {
+    padding: calc(#{$padding} * 4);
+  }
+}
+
+.header {
+  & h1 {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    & h1 {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .footer {
@@ -47,7 +67,7 @@ $padding: 0.5em;
 
 .links {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
 }
 
