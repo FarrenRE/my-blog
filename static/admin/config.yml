@@ -108,19 +108,33 @@ collections:
             }
           }
         }
-      - {
-          name: socials,
-          label: Socials,
-          widget: select,
-          multiple: true,
-          required: false,
-          options: 
-            - { label: "Github", value: "github" }
-            - { label: "Stack Overflow", value: "stackoverflow" }
-            - { label: "Ravelry", value: "ravelry" }
-            - { label: "Linkedin", value: "linkedin" }
-          
-        }
+      - label: "Links"
+        name: "links"
+        widget: "object"
+        summary: '{{fields.name}}'
+        collapsed: true
+        required: false
+        fields:
+          - label: "External"
+            name: "external"
+            widget: "string"
+            hint: "https://..."
+          - label: "Github"
+            name: "github"
+            widget: "string"
+            hint: "https://www.github.com/..."
+          - label: "Linkedin"
+            name: "linkedin"
+            widget: "string"
+            hint: "https://www.linkedin.com/..."
+          - label: "Stack Overflow"
+            name: "stackoverflow"
+            widget: "string"
+            hint: "https://www.stackoverflow.com/..."
+          - label: "Ravelry"
+            name: "ravelry"
+            widget: "string"
+            hint: "https://www.ravelry.com/..."
       - {
           name: github,
           label: Github,

@@ -49,7 +49,7 @@ export const pageQuery = graphql`
             linkedin
             ravelry
             stackoverflow
-            socials
+            links
           }
         }
       }
