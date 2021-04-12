@@ -1,0 +1,13 @@
+.iconLink {
+  color: var(--primary-color);
+  display: flex;
+  font-size: 2.8rem;
+
+  & svg path {
+    stroke: var(--primary-color);
+  }
+  
+  &:not(:last-of-type) {
+    margin-right: 0.5em;
+  }
+}
