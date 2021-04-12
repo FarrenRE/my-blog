@@ -6,6 +6,8 @@ externalPath: 'https://auspath.org'
 title: AusPATH website
 tagline: Maintenance and new features for already-developed Wordpress site
 thumbnail: /assets/auspath-org.png
+links:
+  external: 'https://auspath.org'
 ---
 A Wordpres site facilitating a membership business model initially developed by the WildMinds agency, I took over maintenance and development of this website in mid-2020. 
 
