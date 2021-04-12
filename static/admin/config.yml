@@ -119,22 +119,27 @@ collections:
             name: "external"
             widget: "string"
             hint: "https://..."
+            required: false
           - label: "Github"
             name: "github"
             widget: "string"
             hint: "https://www.github.com/..."
+            required: false
           - label: "Linkedin"
             name: "linkedin"
             widget: "string"
             hint: "https://www.linkedin.com/..."
+            required: false
           - label: "Stack Overflow"
             name: "stackoverflow"
             widget: "string"
             hint: "https://www.stackoverflow.com/..."
+            required: false
           - label: "Ravelry"
             name: "ravelry"
             widget: "string"
             hint: "https://www.ravelry.com/..."
+            required: false
       - {
           name: github,
           label: Github,

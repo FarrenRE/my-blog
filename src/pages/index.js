@@ -25,34 +25,29 @@ const IndexPage = ({
 
 export default IndexPage
 export const pageQuery = graphql`
-  query indexPageQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
+query indexPageQuery {
+  site {
+    siteMetadata {
+      title
+      description
     }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          html
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            externalPath
-            title
-            order
-            tagline
-            github
-            linkedin
-            ravelry
-            stackoverflow
-            links
-          }
+  }
+  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {draft: {ne: true}}}) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        html
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          path
+          title
+          order
+          tagline
+          links
         }
       }
     }
   }
+}
 `

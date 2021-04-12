@@ -1,14 +1,28 @@
 import React from "react"
 import { Link } from "gatsby"
 import styles from '../styles/FancySquare.module.scss'
+import IconLink from './IconLink'
 
 // icons
-import { FaEllipsisH } from 'react-icons/fa'
-import { BiLinkExternal } from 'react-icons/bi'
-import { GrInspect, GrGithub, GrLinkedin, GrStackOverflow } from 'react-icons/gr'
-import { FaRavelry } from 'react-icons/fa'
+import { GrInspect } from 'react-icons/gr'
 
 const FancySquare = ({ post }) => {
+
+  // construct array of objects from JSON to render as <IconLink>'s
+  const iconLinks = []
+  if(post.frontmatter.links) {
+    const linkData = post.frontmatter.links
+    const keys = Object.keys(linkData)
+    const links = [];
+    keys.map( 
+      k => links.push({ "name": k, "url": linkData[k] })
+    )
+    links.map(
+      l => iconLinks.push( <IconLink data={l} /> )
+    )
+  }
+
+
   return (
     <article
       className={styles.FancySquare}
@@ -28,6 +42,8 @@ const FancySquare = ({ post }) => {
           </h1>
         </div>
         <div className={styles.body}>
+
+          
 
           {/* Conditionally render tagline */}
           {post.frontmatter.tagline &&
@@ -51,49 +67,8 @@ const FancySquare = ({ post }) => {
               </Link>
             }
 
-            {/* External path */}
-            {post.frontmatter.externalPath && 
-              <a
-                href={post.frontmatter.externalPath}
-                className={styles.iconLink}
-              >
-                <BiLinkExternal />
-              </a>
-            }
-
-            {/* Socials */}
-            {post.frontmatter.github &&
-              <a
-                href={post.frontmatter.github}
-                className={styles.iconLink}
-              >
-                <GrGithub />
-              </a>
-            }
-            {post.frontmatter.linkedin &&
-              <a
-                href={post.frontmatter.linkedin}
-                className={styles.iconLink}
-              >
-                <GrLinkedin />
-              </a>
-            }
-            {post.frontmatter.stackoverflow &&
-              <a
-                href={post.frontmatter.stackoverflow}
-                className={styles.iconLink}
-              >
-                <GrStackOverflow />
-              </a>
-            }
-            {post.frontmatter.ravelry &&
-              <a
-                href={post.frontmatter.ravelry}
-                className={styles.iconLink}
-              >
-                <FaRavelry />
-              </a>
-            }
+            {/* Other links */}
+            {iconLinks ? iconLinks : ''}
 
           </div>
 

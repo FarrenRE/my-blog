@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import IconLink from '../components/IconLink'
 import styles from '../styles/blogTemplate.module.scss'
 
 // icons
@@ -16,6 +17,21 @@ export default function Template({
   const { site, markdownRemark } = data // data.markdownRemark holds your post data
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
+
+  // construct array of objects from JSON to render as <IconLink>'s
+  const iconLinks = []
+  if(frontmatter.links) {
+    const linkData = frontmatter.links
+    const keys = Object.keys(linkData)
+    const links = [];
+    keys.map( 
+      k => links.push({ "name": k, "url": linkData[k] })
+    )
+    links.map(
+      l => iconLinks.push( <IconLink data={l} /> )
+    )
+  }
+
   return (
     <Layout>
       <Helmet>
@@ -38,61 +54,7 @@ export default function Template({
             </div>
           )}
           <div className={styles.externalLinks}>
-
-            {/* External path */}
-            {frontmatter.externalPath && 
-              <a
-                href={frontmatter.externalPath}
-                className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BiLinkExternal />
-              </a>
-            }
-
-            {/* Socials */}
-            {frontmatter.github &&
-              <a
-                href={frontmatter.github}
-                className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GrGithub />
-              </a>
-            }
-            {frontmatter.linkedin &&
-              <a
-                href={frontmatter.linkedin}
-                className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GrLinkedin />
-              </a>
-            }
-            {frontmatter.stackoverflow &&
-              <a
-                href={frontmatter.stackoverflow}
-                className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GrStackOverflow />
-              </a>
-            }
-            {frontmatter.ravelry &&
-              <a
-                href={frontmatter.ravelry}
-                className={styles.iconLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaRavelry />
-              </a>
-            }
-
+            {iconLinks}
           </div>
           <div
             className="blog-post-content"
@@ -120,9 +82,7 @@ export const pageQuery = graphql`
         thumbnail
         metaDescription
         externalPath
-        github
-        ravelry
-        linkedin
+        links
       }
     }
   }

@@ -15,7 +15,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       linkedin: String
       stackoverflow: String
       ravelry: String
-      socials: [String]
+      links: JSON
       draft: Boolean
     }
   `
