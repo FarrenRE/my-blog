@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styles from "../styles/IconLink.module.scss"
 
 // icons

@@ -1,10 +1,8 @@
 import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
-import Layout from "../components/layout"
 // import PostLink from "../components/post-link"
 import FancySquare from '../components/FancySquare'
-import HeroHeader from "../components/heroHeader"
 
 const IndexPage = ({
   data: {
@@ -17,9 +15,15 @@ const IndexPage = ({
     .map(edge => <FancySquare key={edge.node.id} post={edge.node} />)
 
   return (
-    <div className="squares">
-      {Posts}
-    </div>
+    <>
+      <Helmet>
+        <title>{site.siteMetadata.title}</title>
+        <meta name="description" content={site.siteMetadata.description} />
+      </Helmet>
+      <div className="squares">
+        {Posts}
+      </div>
+    </>
   )
 }
 

@@ -5,12 +5,6 @@ import Layout from "../components/layout"
 import IconLink from '../components/IconLink'
 import styles from '../styles/blogTemplate.module.scss'
 
-// icons
-import { BiLinkExternal } from 'react-icons/bi'
-import { GrGithub, GrLinkedin, GrStackOverflow } from 'react-icons/gr'
-import { FaRavelry } from 'react-icons/fa'
-
-
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
