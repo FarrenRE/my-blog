@@ -2,10 +2,11 @@
 template: BlogPost
 date: 2021-04-16T01:05:38.464Z
 path: /whatkey
-externalPath: 'https://hardcore-neumann-ecc602.netlify.app/'
+externalPath: ''
 title: What hotkey?
 tagline: React + Redux web app (WIP)
 links:
+  external: 'https://hardcore-neumann-ecc602.netlify.app/'
   github: 'https://github.com/FarrenRE/whathotkey'
 draft: false
 ---
