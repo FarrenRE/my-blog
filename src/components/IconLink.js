@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "../styles/IconLink.module.scss"
+import { motion } from 'framer-motion'
 
 // icons
 import { GrGithub, GrLinkedin, GrStackOverflow } from 'react-icons/gr'
@@ -33,12 +34,13 @@ const IconLink = (props) => {
   }
 
   return (
-    <a 
+    <motion.a 
       href={props.data.url}
       className={styles.iconLink}
+      whileHover={{ scale: 1.25, color: '#fefefe', opacity: 0.85 }}
     >
       {icon}
-    </a>
+    </motion.a>
   )
 }
 export default IconLink

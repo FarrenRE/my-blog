@@ -1,8 +1,8 @@
 import React from "react"
-import Helmet from 'react-helmet';
+import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-// import PostLink from "../components/post-link"
 import FancySquare from '../components/FancySquare'
+// import { useTrail } from 'react-spring/renderprops'
 
 const IndexPage = ({
   data: {
@@ -12,7 +12,13 @@ const IndexPage = ({
 }) => {
 
   const Posts = edges
-    .map(edge => <FancySquare key={edge.node.id} post={edge.node} />)
+    .map(
+      edge => 
+        <FancySquare 
+          key={edge.node.id} 
+          post={edge.node} 
+        />
+      )
 
   return (
     <>
@@ -20,6 +26,9 @@ const IndexPage = ({
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
+      {/* {trail.map(({ opacity }, index) => (
+        items[index]
+      ))} */}
       <div className="squares">
         {Posts}
       </div>
