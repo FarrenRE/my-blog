@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import { motion } from 'framer-motion'
+
 import styles from '../styles/FancySquare.module.scss'
 import IconLink from './IconLink'
-
-// icons
 import { GrInspect } from 'react-icons/gr'
+import { useSpring, animated } from 'react-spring'
 
 const FancySquare = ({ post }) => {
 
@@ -22,10 +23,12 @@ const FancySquare = ({ post }) => {
     )
   }
 
+  const style = useSpring({scale: 1, from: {scale: 0}})
+
   return (
-    <article
+    <animated.article
       className={styles.FancySquare}
-      style={{order: post.frontmatter.order}}
+      style={style}
       id={ // set id from title
         post.frontmatter.title
           .split(/[., !/():'"]/, -1)
@@ -54,6 +57,8 @@ const FancySquare = ({ post }) => {
         </div>
         <div className={styles.footer}>
 
+
+
           <div className={styles.links}>
 
             {/* Path to blog content */}
@@ -62,7 +67,12 @@ const FancySquare = ({ post }) => {
                 to={post.frontmatter.path}
                 className={styles.iconLink}
               >
-                <GrInspect />
+                <motion.span 
+                  className={styles.iconLink}
+                  whileHover={{ scale: 1.25, color: '#fefefe', opacity: 0.85 }}
+                >
+                  <GrInspect />
+                </motion.span>
               </Link>
             }
 
@@ -80,7 +90,7 @@ const FancySquare = ({ post }) => {
         </div>
       </div>
       {/* <span className={styles.close}>x</span> */}
-    </article>
+    </animated.article>
   )
 }
 export default FancySquare
