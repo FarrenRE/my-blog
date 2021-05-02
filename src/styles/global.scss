@@ -404,8 +404,11 @@ h2 {
   margin-top: 1.5em;
 }
 
-#about-me > div {
-  background-color: rgba(153, 132, 213, 0.25) !important;
+#about-me {
+  order: -1;
+  & > div {
+    background-color: rgba(153, 132, 213, 0.25) !important;
+  }
 }
 
 
