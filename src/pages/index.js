@@ -1,7 +1,6 @@
 import React from "react"
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 import FancySquare from '../components/FancySquare'
 // import { useTrail } from 'react-spring/renderprops'
 
@@ -21,15 +20,8 @@ const IndexPage = ({
         />
       )
 
-  // const items = React.Children.toArray(Posts)
-  // const trail = useTrail(items.length, {
-  //   opacity: 1,
-  //   from: { opacity: 0 }
-  // })
-    
-
   return (
-    <Layout>
+    <>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
@@ -40,7 +32,7 @@ const IndexPage = ({
       <div className="squares">
         {Posts}
       </div>
-    </Layout>
+    </>
   )
 }
 
