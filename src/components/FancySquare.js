@@ -19,16 +19,17 @@ const FancySquare = ({ post }) => {
       k => links.push({ "name": k, "url": linkData[k] })
     )
     links.map(
-      l => iconLinks.push( <IconLink data={l} /> )
+      ( l, i ) => iconLinks.push( <IconLink data={l} key={i} /> )
     )
   }
 
   const style = useSpring({scale: 1, from: {scale: 0}})
 
   return (
-    <animated.article
+    // <animated.article
+    <article
       className={styles.FancySquare}
-      style={style}
+      // style={style}
       id={ // set id from title
         post.frontmatter.title
           .split(/[., !/():'"]/, -1)
@@ -90,7 +91,8 @@ const FancySquare = ({ post }) => {
         </div>
       </div>
       {/* <span className={styles.close}>x</span> */}
-    </animated.article>
+    {/* </animated.article> */}
+    </article>
   )
 }
 export default FancySquare

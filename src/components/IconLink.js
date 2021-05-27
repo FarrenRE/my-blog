@@ -11,7 +11,7 @@ const IconLink = (props) => {
 
   let icon;
 
-  console.log(`switch: ${props.data.name.toLowerCase()}`)
+  // console.log(`switch: ${props.data.name.toLowerCase()}`)
   
   switch( props.data.name.toLowerCase() ) {
     case 'external':
