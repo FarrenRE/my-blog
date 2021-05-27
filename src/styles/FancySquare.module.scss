@@ -5,7 +5,6 @@ $padding: 0.5em;
   display: flex;
   align-items: stretch;
   flex: 0 1 100%;
-  padding: $padding $padding 0 0;
   position: relative;
   min-height: 50vh;
   font-size: 1.65rem;
@@ -15,26 +14,6 @@ $padding: 0.5em;
   }
 }
 
-@media (min-width: 768px) {
-  .FancySquare {
-    flex: 50%;
-    min-height: 50vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .FancySquare {
-    flex: 33%;
-    min-height: 33vh;
-  }
-}
-
-@media (min-width: 1600px) {
-  .FancySquare {
-    flex: 25%;
-    min-height: 25vh;
-  }
-}
 
 .inner {
   background-color: rgba(255, 255, 255, 0.05);
