@@ -2,6 +2,7 @@
 template: BlogPost
 date: 2022-05-13T02:35:17.833Z
 path: /gatsby-node-sass-unsupported
+externalPath: /gatsby-node-sass-unsupported
 title: $ gatsby develop | Node Sass does not yet support your current environment
 metaDescription: >-
   Node Sass does not yet support your current environment: Windows 64-bit with
