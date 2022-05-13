@@ -31,10 +31,11 @@ Since [node-sass is deprecated](https://sass-lang.com/blog/libsass-is-deprecated
 `gatsby-plugin-sass`,
 ```
 
-Just need to specify the correct parameter to ensure the correct compiler is being used:
+Just need to specify the correct parameter to ensure the correct compiler is being used, so the above becomes:
 
 ```
-// remember to "npm i --save sass" in lieu of node-sass (might as well uninstall it, too!)
+// remember to "npm i --save sass" in lieu of node-sass 
+// (might as well uninstall node-sass while we're at it)
 
 {
     resolve: `gatsby-plugin-sass`,
